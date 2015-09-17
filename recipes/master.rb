@@ -16,7 +16,7 @@ file "#{node[:hopsbench][:conf_dir]}/namenodes" do
    action :delete
 end
 
-namenodes = node[:hops][:nn][:private_ips].join("\n")
+namenodes = node[:hadoop][:nn][:private_ips].join("\n")
 namenodes += "\n"
 
 Chef::Log.info "The contents of the namenodes file: #{namenodes}"
@@ -34,7 +34,7 @@ file "#{node[:hopsbench][:conf_dir]}/datanodes" do
    action :delete
 end
 
-datanodes = node[:hops][:dn][:private_ips].join("\n")
+datanodes = node[:hadoop][:dn][:private_ips].join("\n")
 datanodes += "\n"
 
 Chef::Log.info "The contents of the datanodes file: #{datanodes}"
