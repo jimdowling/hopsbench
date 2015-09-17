@@ -1,12 +1,10 @@
 dependencies:
   - recipe: hopsbench::install
-    local:
-      - hops::install
   - recipe: hopsbench::master
     local:
       - hopsbench::install
     global:
-      - hops::client
+      - hadoop::nn
   - recipe: hopsbench::slave
     local:
       - hopsbench::install
